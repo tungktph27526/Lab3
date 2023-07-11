@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,26 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab3"
-        tools:targetApi="31"
         android:usesCleartextTraffic="true"
-        >
-
+        tools:targetApi="31">
         <activity
-            android:name=".Bai2"
+            android:name=".Bai4.Bai4"
+            android:exported="false" />
+        <activity
+            android:name=".Bai3.Bai3"
+            android:exported="false" />
+        <activity
+            android:name=".Bai2.Bai2"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".Bai1"
-            android:exported="false" >
-
-        </activity>
+            android:name=".Bai1.Bai1"
+            android:exported="false" />
     </application>
 
 </manifest>

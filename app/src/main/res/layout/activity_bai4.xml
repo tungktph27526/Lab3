@@ -12,18 +12,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Learn HTTP Using GET"
+        android:text="GIAI PHUONG TRINH"
         android:textSize="20sp"/>
     <EditText
-        android:id="@+id/ed_name"
+        android:id="@+id/ed_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name: "/>
+        android:hint="a: "/>
     <EditText
-        android:id="@+id/ed_score"
+        android:id="@+id/ed_b"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Score: "/>
+        android:hint="b: "/>
+    <EditText
+        android:id="@+id/ed_c"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="c: "/>
     <Button
         android:id="@+id/btn_send"
         android:layout_width="match_parent"

@@ -1,15 +1,15 @@
-package com.example.lab3;
+package com.example.lab3.Bai1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.lab3.R;
 
 public class Bai1 extends AppCompatActivity implements View.OnClickListener {
     public static final String SERVER_NAME = "http://192.168.100.18:80/kieuthanhtung_ph27526/student_GET.php";

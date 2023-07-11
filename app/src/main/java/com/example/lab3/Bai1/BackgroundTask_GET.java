@@ -1,4 +1,4 @@
-package com.example.lab3;
+package com.example.lab3.Bai1;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -6,11 +6,11 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.lab3.Bai1.Bai1;
+
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BackgroundTask_GET extends AsyncTask<Void,Void, Void> {

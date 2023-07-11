@@ -1,4 +1,4 @@
-package com.example.lab3;
+package com.example.lab3.Bai3;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,54 +13,49 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class BackgroundTask_POST extends AsyncTask<Void, Void, Void> {
-    String duongdan = Bai2.SERVER_NAME1;
-    TextView tvResult;
-    String strWidth, strLength;
-    String str;
-    ProgressDialog progressDialog;
+public class BackgroundTask_POST_Un3 extends AsyncTask<String, Void, Void> {
+    String duongdan = Bai3.SERVER_NAME2;
     Context context;
+    TextView tvResult;
+    String strResult;
+    ProgressDialog progressDialog;
 
-    public BackgroundTask_POST(TextView tvResult, String strWidth, String strLength, Context context) {
-        this.tvResult = tvResult;
-        this.strWidth = strWidth;
-        this.strLength = strLength;
+    public BackgroundTask_POST_Un3(Context context, TextView tvResult) {
         this.context = context;
+        this.tvResult = tvResult;
     }
+
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("Sending...");
+        progressDialog.setMessage("sending...");
         progressDialog.setIndeterminate(false);
         progressDialog.setCancelable(false);
         progressDialog.show();
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
-        //duongdan += "?chieurong=" + this.strWidth + "&chieudai=" + this.strLength;
+    protected Void doInBackground(String... strings) {
         try {
             URL url = new URL(duongdan);
-            String param= "chieurong=" + URLEncoder.encode(strWidth, "utf-8")+ "&chieudai="
-                    + URLEncoder.encode(strLength, "utf-8");
+            String param = "canh=" + URLEncoder.encode(strings[0].toString(), "utf-8");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setDoOutput(true);
             urlConnection.setRequestMethod("POST");
             urlConnection.setFixedLengthStreamingMode(param.getBytes().length);
-            urlConnection.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
-
+            urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
             PrintWriter printWriter = new PrintWriter(urlConnection.getOutputStream());
             printWriter.print(param);
             printWriter.close();
 
             String line = "";
-            BufferedReader btf = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+            BufferedReader bft = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
             StringBuffer sb = new StringBuffer();
-            while ((line = btf.readLine()) != null){
+            while ((line = bft.readLine()) != null){
                 sb.append(line);
             }
-            str= sb.toString();
+            strResult = sb.toString();
             urlConnection.disconnect();
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +69,6 @@ public class BackgroundTask_POST extends AsyncTask<Void, Void, Void> {
         if (progressDialog.isShowing()){
             progressDialog.dismiss();
         }
-        tvResult.setText(str);
+        tvResult.setText(strResult);
     }
 }

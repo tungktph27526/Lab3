@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="20dp"
-    tools:context=".Bai1">
+    tools:context=".Bai1.Bai1">
 
     <TextView
         android:layout_width="wrap_content"

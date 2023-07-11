@@ -1,4 +1,4 @@
-package com.example.lab3;
+package com.example.lab3.Bai2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.lab3.R;
 
 public class Bai2 extends AppCompatActivity implements View.OnClickListener {
     public static final String SERVER_NAME1 = "http://192.168.100.18:80/kieuthanhtung_ph27526/rectangle_POST.php";
